@@ -395,13 +395,8 @@ function hostnameErrorTemplate(fetchedURL, bareServer) {
     const script =
         `remoteHostname.textContent = ${JSON.stringify(
             parsedFetchedURL.hostname
-        )};` +
-        `bareServer.href = ${JSON.stringify(bareServer)};` +
-        `uvHostname.textContent = ${JSON.stringify(location.hostname)};` +
-        `reload.addEventListener("click", () => location.reload());` +
-        `uvVersion.textContent = ${JSON.stringify(
-            process.env.ULTRAVIOLET_VERSION
-        )};`;
+        )};`
+        `reload.addEventListener("click", () => location.reload());`;
 
     return (
         '<!DOCTYPE html>' +
@@ -418,12 +413,11 @@ function hostnameErrorTemplate(fetchedURL, bareServer) {
         '<ul>' +
         '<li>Verifying you entered the correct address</li>' +
         '<li>Clearing the site data</li>' +
-        '<li>Contacting <b id="uvHostname"></b>\'s administrator</li>' +
-        "<li>Verifying the <a id='bareServer' title='Bare server'>Bare server</a> isn't censored</li>" +
+        '<li>Contacting pickle69420, PickleHub\'s administrator</li>' +
         '</ul>' +
         '<button id="reload">Reload</button>' +
         '<hr />' +
-        '<p><i>Ultraviolet v<span id="uvVersion"></span></i></p>' +
+        '<p><i>PickleHub</i></p>' +
         `<script src="${
             'data:application/javascript,' + encodeURIComponent(script)
         }"></script>` +
@@ -464,14 +458,7 @@ function errorTemplate(
         `errorMessage.textContent =  ${JSON.stringify(message)};` +
         `errorTrace.value = ${JSON.stringify(trace)};` +
         `fetchedURL.textContent = ${JSON.stringify(fetchedURL)};` +
-        `bareServer.href = ${JSON.stringify(bareServer)};` +
-        `for (const node of document.querySelectorAll("#uvHostname")) node.textContent = ${JSON.stringify(
-            location.hostname
-        )};` +
-        `reload.addEventListener("click", () => location.reload());` +
-        `uvVersion.textContent = ${JSON.stringify(
-            process.env.ULTRAVIOLET_VERSION
-        )};`;
+        `reload.addEventListener("click", () => location.reload());`;
 
     return (
         '<!DOCTYPE html>' +
@@ -495,18 +482,11 @@ function errorTemplate(
         '<li>Checking your internet connection</li>' +
         '<li>Verifying you entered the correct address</li>' +
         '<li>Clearing the site data</li>' +
-        '<li>Contacting <b id="uvHostname"></b>\'s administrator</li>' +
-        "<li>Verify the <a id='bareServer' title='Bare server'>Bare server</a> isn't censored</li>" +
-        '</ul>' +
-        '<p>If you\'re the administrator of <b id="uvHostname"></b>, try:</p>' +
-        '<ul>' +
-        '<li>Restarting your Bare server</li>' +
-        '<li>Updating Ultraviolet</li>' +
-        '<li>Troubleshooting the error on the <a href="https://github.com/titaniumnetwork-dev/Ultraviolet">GitHub repository</a></li>' +
+        '<li>Contacting pickle69420, PickleHub\'s administrator</li>' + 
         '</ul>' +
         '<button id="reload">Reload</button>' +
         '<hr />' +
-        '<p><i>Ultraviolet v<span id="uvVersion"></span></i></p>' +
+        '<p><i>PickleHub</i></p>' +
         `<script src="${
             'data:application/javascript,' + encodeURIComponent(script)
         }"></script>` +
